@@ -15,9 +15,13 @@ CapiTainS based environment for production
 
 ## How to run
 
-### On Ubuntu
+### On Ubuntu 14.04 
 
-- `sudo apt-get install docker python-pip`
+- `sudo apt-get install apt-transport-https ca-certificates`
+- `sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D`
+- `sudo echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list`
+- `sudo apt-get update`
+- `sudo apt-get install docker-engine python-pip`
 - `sudo pip install docker-compose`
 - **Simple configuration** `sh daemon.sh`
 - If your machine is not getting anything back, it's probably because gunicorn times out. One way to fix that is to `preprocess` the inventory using `sh preprocess {ID of the container}` where `{ID of the container}` is retrievable through `docker ps`
