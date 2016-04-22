@@ -20,3 +20,4 @@ CapiTainS based environment for production
 - `sudo apt-get install docker python-pip`
 - `sudo pip install docker-compose`
 - **Simple configuration** `sh daemon.sh`
+- If your machine is not getting anything back, it's probably because gunicorn times out. One way to fix that is to `preprocess` the inventory using `sh preprocess {ID of the container}` where `{ID of the container}` is retrievable through `docker ps`
