@@ -1,0 +1,4 @@
+requests
+capitains_nautilus==0.0.3
+flask_nemo>=0.0.5
+gunicorn

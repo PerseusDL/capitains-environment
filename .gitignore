@@ -1,0 +1,3 @@
+.idea
+volumes/repositories/*
+!volumes/repositories/Readme.md

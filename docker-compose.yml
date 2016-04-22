@@ -1,0 +1,32 @@
+web:
+  restart: always
+  build: ./web
+  expose:
+    - "5000"
+  links:
+    - redis:redis
+  volumes:
+    - ./volumes/repositories:/opt/data
+    - ./volumes/static:/opt/static
+  command: gunicorn app:app -w 2 -b :5000
+
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  volumes:
+    - /opt/static
+  volumes_from:
+    - web
+  links:
+    - web:web
+  command: nginx
+
+redis:
+  restart: always
+  image: redis:alpine
+  ports:
+    - "6379:6379"
+  volumes:
+    - redisdata:/data
