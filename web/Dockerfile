@@ -17,6 +17,8 @@ RUN pip3 install -r requirements-py3.txt
 VOLUME /opt/data
 VOLUME /opt/static
 
+RUN ln -s /opt/static/assets/templates
+
 # Expose right ports
 EXPOSE 5000
 

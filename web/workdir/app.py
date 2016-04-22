@@ -36,7 +36,7 @@ nemo = Nemo(
         "default": "/opt/static/assets/xslt/epidocShort.xsl"
     },
     templates = {
-        "passage_footer": "/opt/static/assets/templates/passage_footer.html"
+        "passage_footer": "templates/passage_footer.html"
     }
 )
 # We register its routes
