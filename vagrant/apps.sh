@@ -8,5 +8,5 @@ echo "Starting nemo and nautilus"
 sh daemon.sh
 PS="$(docker ps | grep capitainsenvironment_web | awk '{print $1}')"
 echo "Preprocessing cache on docker container $PS"
-sh "preprocess.sh $PS"
+sh preprocess.sh "$PS"
 
