@@ -9,7 +9,7 @@ import os
      
 d = "/opt/data"
 app = Flask("Nautilus")
-nautilus_cache = RedisCache("redis", port=6379, default_timeout=172800)
+nautilus_cache = RedisCache("redis", port=6379, default_timeout=0)
 nautilus = FlaskNautilus(
     app=app,
     prefix="/api/cts",
@@ -34,6 +34,9 @@ nemo = Nemo(
     ],
     transform={
         "default": "/opt/static/assets/xslt/epidocShort.xsl"
+    },
+    templates = {
+        "passage_footer": "/opt/static/assets/templates/passage_footer.html"
     }
 )
 # We register its routes
