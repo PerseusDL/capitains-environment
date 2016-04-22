@@ -1,3 +1,4 @@
 .idea
+.vagrant
 volumes/repositories/*
 !volumes/repositories/Readme.md

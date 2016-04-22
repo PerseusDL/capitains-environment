@@ -1,2 +1,2 @@
 #!/bin/sh
-docker exec -i -t $1 python3 manager.py nautilus preprocess
+docker exec -i $1 python3 manager.py nautilus preprocess
