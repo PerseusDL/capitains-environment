@@ -42,5 +42,5 @@ CapiTainS based environment for production
     export AWS_KEYPATH='pathtoyourawscert'
     ```
 1. Make sure your default AWS security group has ports 22 and 80 open
-1. vagrant up --provider=aws
+1. ``vagrant up --provider=aws`
 
