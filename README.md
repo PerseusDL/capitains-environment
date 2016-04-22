@@ -28,13 +28,17 @@ CapiTainS based environment for production
 1. Install the vagrant aws plugin and dummy box
    ```
    vagrant plugin install vagrant-aws
+   
    vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
    ```
 1. Add your AWS keys to your profile
     ```
     export AWS_KEY='YOURKEY'
+    
     export AWS_SECRET='YOURSECRET'
+    
     export AWS_KEYNAME='yourawskeypairname'
+    
     export AWS_KEYPATH='pathtoyourawscert'
     ```
 1. Make sure your default AWS security group has ports 22 and 80 open
