@@ -18,5 +18,5 @@ CapiTainS based environment for production
 ### On Ubuntu
 
 - `sudo apt-get install docker python-pip`
-- `sudo pip install docker-co1mpose`
+- `sudo pip install docker-compose`
 - **Simple configuration** `sh daemon.sh`
