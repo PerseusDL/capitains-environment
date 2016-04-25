@@ -7,6 +7,8 @@ sh unzip-corpora-local-volume.sh
 echo "Cleaning the data"
 python3 hookclean.py -c http://ci.perseids.org/api/rest/v1.0/code/ -r PerseusDL/canonical-latinLit -b ./volumes/repositories/canonical-latinLit-master
 python3 hookclean.py -c http://ci.perseids.org/api/rest/v1.0/code/ -r PerseusDL/canonical-greekLit -b ./volumes/repositories/canonical-greekLit-master
+python3 hookclean.py -c http://ci.perseids.org/api/rest/v1.0/code/ -r PerseusDL/canonical-farsiLit -b ./volumes/repositories/canonical-farsiLit-master
+python3 hookclean.py -c http://ci.perseids.org/api/rest/v1.0/code/ -r PerseusDL/canonical-pdlpsci -b ./volumes/repositories/canonical-pdlpsci-master
 echo "Starting nemo and nautilus"
 sh daemon.sh
 PS="$(docker ps | grep capitainsenvironment_web | awk '{print $1}')"
