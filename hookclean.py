@@ -14,12 +14,17 @@ data = urllib.request.urlopen(str(options.ci_base + options.repos))
 reader = codecs.getreader("utf-8")
 parsed = json.load(reader(data))
 for j in parsed['logs']:
-    results = urllib.request.urlopen(str(options.ci_base + options.repos + "?uuid=" + j['uuid']))
-    parsed_results = json.load(reader(results))
-    # take the first build which has any unit test results
-    if (len(parsed_results['units']) > 0):
-        build_results = parsed_results['units']
+    # if the last test shows 100% coverage, we're done
+    if j['coverage'] == 100:
+        print("Coverage for " + options.repos + " 100%")
         break
+    else:
+        results = urllib.request.urlopen(str(options.ci_base + options.repos + "?uuid=" + j['uuid']))
+        parsed_results = json.load(reader(results))
+        # take the first build which has any unit test results
+        if (len(parsed_results['units']) > 0):
+            build_results = parsed_results['units']
+            break
 to_remove = []
 for f in build_results:
     #skip the __cts__.xml files we just want to know which tei files to kill
